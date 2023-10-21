@@ -1,0 +1,48 @@
+C:\Users\2021c\source\repos\bapp\bapp\bin\Debug\bapp.exe.config
+C:\Users\2021c\source\repos\bapp\bapp\bin\Debug\bapp.exe
+C:\Users\2021c\source\repos\bapp\bapp\bin\Debug\bapp.pdb
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.csproj.AssemblyReference.cache
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.Form1.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.Form2.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.Form3.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.Form4.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.Form5.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.Form6.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.Properties.Resources.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.SignUp.resources
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.csproj.GenerateResource.cache
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.csproj.CoreCompileInputs.cache
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.exe
+C:\Users\2021c\source\repos\bapp\bapp\obj\Debug\bapp.pdb
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\bin\Debug\bapp.exe.config
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\bin\Debug\bapp.exe
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\bin\Debug\bapp.pdb
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.csproj.AssemblyReference.cache
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.Form1.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.Form2.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.Form3.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.Form4.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.Form5.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.Form6.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.Properties.Resources.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.SignUp.resources
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.csproj.GenerateResource.cache
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.csproj.CoreCompileInputs.cache
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.exe
+C:\Users\2021c\source\repos\BookstoreInventoryManagementSystem\bapp\bapp\obj\Debug\bapp.pdb
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\bin\Debug\bapp.exe.config
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\bin\Debug\bapp.exe
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\bin\Debug\bapp.pdb
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.csproj.AssemblyReference.cache
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.Form1.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.Form2.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.Form3.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.Form4.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.Form5.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.Form6.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.Properties.Resources.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.SignUp.resources
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.csproj.GenerateResource.cache
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.csproj.CoreCompileInputs.cache
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.exe
+C:\Users\faiza\Documents\SEMESTER 5\SE LAB\Github\Bookbolted\bapp\bapp\obj\Debug\bapp.pdb
