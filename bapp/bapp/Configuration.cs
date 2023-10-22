@@ -10,7 +10,7 @@ namespace bapp
     
         class Configuration
         {
-            String ConnectionStr = @"Data Source=FAIZANS\SQLEXPRESS;Initial Catalog=bookbolted;Integrated Security=True";
+            String ConnectionStr = @"Data Source=FAIZANS;Initial Catalog=bookbolted;Integrated Security=True";
             SqlConnection con;
             private static Configuration _instance;
             public static Configuration getInstance()
