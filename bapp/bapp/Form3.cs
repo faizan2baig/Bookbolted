@@ -91,12 +91,17 @@ namespace bapp
                 return false;
             }
         }
-
+        //button1_Click
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form f = new Form1();
             f.Show();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
