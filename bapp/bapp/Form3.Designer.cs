@@ -86,7 +86,6 @@
             this.textBox2.Size = new System.Drawing.Size(143, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.TabStop = false;
-            this.textBox2.Text = "fbaig8293@gmail.com";
             // 
             // button1
             // 
@@ -114,6 +113,7 @@
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
