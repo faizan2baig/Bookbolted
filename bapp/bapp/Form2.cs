@@ -19,6 +19,7 @@ namespace bapp
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            //textbox validation
            
                 if (textBox1.Text.Length == 1)
                 {
