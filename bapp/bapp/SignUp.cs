@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.SqlClient;
 
 namespace bapp
 {
@@ -29,57 +30,95 @@ new
         {
 
         }
+        private bool ContainsSpace(string text)
+        {
+            return text.Contains(" ");
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {/////////////////////////////////////////////////////////////////////////////////////////
-          
-           
-                // Generate a 4-digit verification code
-                string verificationCode = GenerateVerificationCode();
+            try
+            {
+                // Get data from text boxes and combo box
+                string username = textBox1.Text;
+                string password = textBox3.Text;
+                string email = textBox2.Text;
+                string role = comboBox1.SelectedItem?.ToString(); // Assuming the role is selected from a combo box
 
-                // Get the email address from textBox2
-                string recipientEmail = textBox2.Text.Trim();
-
-                // Your email configuration
-                string senderEmail = "faizan2baig@gmail.com"; // Replace with your email address
-                string senderPassword = "nnkk qqdo xqmi shra"; // Replace with your email password
-                string smtpServer = "smtp.gmail.com"; // Replace with your SMTP server
-
-                try
+                // Validate if the username, password, and email are not empty
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email))
                 {
-                    using (SmtpClient smtpClient = new SmtpClient(smtpServer))
+                    MessageBox.Show("Username, password, and email are required.");
+                    return; // Exit the method without inserting data
+                }
+
+                // Check if any text box contains space
+                if (ContainsSpace(username) || ContainsSpace(password) || ContainsSpace(email))
+                {
+                    MessageBox.Show("Username, password, and email cannot contain spaces.");
+                    return; // Exit the method without inserting data
+                }
+
+                string ConnectionString = "Data Source=FAIZAN;Initial Catalog=bookbolted;Integrated Security=True";
+
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Check if the same email already exists
+                    string checkEmailQuery = "SELECT COUNT(*) FROM [User] WHERE Email = @Email";
+
+                    using (SqlCommand checkEmailCommand = new SqlCommand(checkEmailQuery, connection))
                     {
-                        smtpClient.Port = 587; // Port for Gmail SMTP
-                        smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                        smtpClient.EnableSsl = true;
+                        checkEmailCommand.Parameters.AddWithValue("@Email", email);
 
-                        using (MailMessage mail = new MailMessage(senderEmail, recipientEmail))
+                        int emailCount = Convert.ToInt32(checkEmailCommand.ExecuteScalar());
+
+                        if (emailCount > 0)
                         {
-                            mail.Subject = "Verification Code";
-                            mail.Body = $"Your verification code is: {verificationCode}";
-
-                            smtpClient.Send(mail);
+                            MessageBox.Show("Email already exists. Please use a different email address.");
+                            return; // Exit the method without inserting duplicate data
                         }
+                    }
 
-                        MessageBox.Show("Verification code sent successfully!");
+                    // Check if the same username already exists (optional, you can skip this check if usernames can be duplicated)
+                    string checkUsernameQuery = "SELECT COUNT(*) FROM [User] WHERE Username = @Username";
+
+                    using (SqlCommand checkUsernameCommand = new SqlCommand(checkUsernameQuery, connection))
+                    {
+                        checkUsernameCommand.Parameters.AddWithValue("@Username", username);
+
+                        int usernameCount = Convert.ToInt32(checkUsernameCommand.ExecuteScalar());
+
+                        if (usernameCount > 0)
+                        {
+                            MessageBox.Show("Username already exists. Please choose a different username.");
+                            return; // Exit the method without inserting duplicate data
+                        }
+                    }
+
+                    // Insert the new user into the User table
+                    string insertQuery = "INSERT INTO [User] (Username, Password, Email, Role) " +
+                                         "VALUES (@Username, @Password, @Email, @Role)";
+
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password);
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Role", role);
+
+                        command.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.Message}");
-                }
-            
 
-            
-        
-    
+                MessageBox.Show("User signed up successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
-            ////////////////////////////////////////////////////////////////////////////////////////
-            //
-            this.Hide();
-            Form f = new Form2();
-
-            f.Show();
         }
         private string GenerateVerificationCode()
         {
@@ -98,7 +137,7 @@ new
                 return false;
             }
         }
-       
+
 
         private void textBox2_Validating(object sender, CancelEventArgs e)
         {
@@ -119,6 +158,58 @@ new
         private void SignUp_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            string username = textBox1.Text;
+
+            if (IsValidName(username))
+            {
+                // Valid name
+               // MessageBox.Show("Valid name.");
+            }
+            else
+            {
+                // Invalid name
+                MessageBox.Show("Invalid name. Names should not contain special characters or numbers.");
+                textBox1.Focus();   
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            string password = textBox3.Text;
+
+            if (HasOnlyFourNumbers(password))
+            {
+                // Valid password with only 4 numbers
+               // MessageBox.Show("Valid password with only 4 numbers.");
+            }
+            else
+            {
+                // Invalid password
+                MessageBox.Show("Invalid password. Password should have only 4 numbers.");
+            }
+        }
+        private bool IsValidName(string name)
+        {
+            // Customize this method based on your name validation criteria
+            // For example, allow only alphabets and spaces
+            return !string.IsNullOrWhiteSpace(name) && name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+        }
+
+       
+
+        private bool HasOnlyFourNumbers(string password)
+        {
+            // Check if the password has only 4 numbers
+            return password.Length == 4 && password.All(char.IsDigit);
         }
     }
 }

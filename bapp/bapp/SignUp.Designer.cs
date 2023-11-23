@@ -76,6 +76,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 20);
             this.textBox2.TabIndex = 11;
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
             // textBox1
@@ -86,6 +87,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 20);
             this.textBox1.TabIndex = 9;
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // label2
             // 
@@ -117,6 +119,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(143, 20);
             this.textBox3.TabIndex = 17;
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // label4
             // 
@@ -138,7 +141,6 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Admin",
-            "Employee",
             "Customer"});
             this.comboBox1.Location = new System.Drawing.Point(98, 205);
             this.comboBox1.Name = "comboBox1";

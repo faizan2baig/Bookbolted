@@ -22,7 +22,7 @@ namespace bapp
         {
 
         }
-        private const string ConnectionString = @"Data Source=FAIZANS;Initial Catalog=bookbolted;Integrated Security=True";
+        private const string ConnectionString = @"Data Source=FAIZAN;Initial Catalog=bookbolted;Integrated Security=True";
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -196,6 +196,154 @@ namespace bapp
                     textBox8.Text = threshold.ToString();
                 }
             
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get data from text boxes
+                int bookID = Convert.ToInt32(textBox1.Text); // Assuming textBox1 contains the BookID for the record to be edited
+                string title = textBox2.Text;
+                string author = textBox3.Text;
+                string genre = textBox4.Text;
+                string isbn = textBox5.Text;
+                decimal price = Convert.ToDecimal(textBox6.Text);
+                int quantityInStock = Convert.ToInt32(textBox7.Text);
+                int threshold = Convert.ToInt32(textBox8.Text);
+
+                // Check if any text box contains space
+                if (ContainsSpace(title) || ContainsSpace(author) || ContainsSpace(genre) || ContainsSpace(isbn))
+                {
+                    MessageBox.Show("Text boxes cannot contain spaces.");
+                    return; // Exit the method without updating data
+                }
+
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Check if the same data already exists excluding the current record
+                    string checkQuery = "SELECT COUNT(*) FROM Inventory " +
+                                        "WHERE Title = @Title AND Author = @Author AND Genre = @Genre AND ISBN = @ISBN AND BookID != @BookID";
+
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@Title", title);
+                        checkCommand.Parameters.AddWithValue("@Author", author);
+                        checkCommand.Parameters.AddWithValue("@Genre", genre);
+                        checkCommand.Parameters.AddWithValue("@ISBN", isbn);
+                        checkCommand.Parameters.AddWithValue("@BookID", bookID);
+
+                        int count = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Data already exists in the table.");
+                            return; // Exit the method without updating duplicate data
+                        }
+                    }
+
+                    string updateQuery = "UPDATE Inventory " +
+                                         "SET Title = @Title, Author = @Author, Genre = @Genre, ISBN = @ISBN, " +
+                                         "Price = @Price, QuantityInStock = @QuantityInStock, Threshold = @Threshold " +
+                                         "WHERE BookID = @BookID";
+
+                    using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@BookID", bookID);
+                        command.Parameters.AddWithValue("@Title", title);
+                        command.Parameters.AddWithValue("@Author", author);
+                        command.Parameters.AddWithValue("@Genre", genre);
+                        command.Parameters.AddWithValue("@ISBN", isbn);
+                        command.Parameters.AddWithValue("@Price", price);
+                        command.Parameters.AddWithValue("@QuantityInStock", quantityInStock);
+                        command.Parameters.AddWithValue("@Threshold", threshold);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Data updated successfully.");
+
+                // Refresh the DataGridView
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get data from text box
+                int bookIDToDelete = Convert.ToInt32(textBox1.Text);
+
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Get the data of the record to be deleted
+                    string selectQuery = "SELECT TOP (1) [AuditID], [BookID], [Action], [DateTime] " +
+                                         "FROM InventoryAudit " +
+                                         "WHERE BookID = @BookID " +
+                                         "ORDER BY DateTime DESC"; // Assuming you want the latest audit entry
+
+                    using (SqlCommand selectCommand = new SqlCommand(selectQuery, connection))
+                    {
+                        selectCommand.Parameters.AddWithValue("@BookID", bookIDToDelete);
+
+                        using (SqlDataReader reader = selectCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Read the data from the audit table
+                                int auditID = Convert.ToInt32(reader["AuditID"]);
+                                int bookID = Convert.ToInt32(reader["BookID"]);
+                                string action = reader["Action"].ToString();
+                                DateTime dateTime = Convert.ToDateTime(reader["DateTime"]);
+
+                                // Insert the data into InventoryAudit
+                                string auditQuery = "INSERT INTO InventoryAudit (AuditID, BookID, Action, DateTime) " +
+                                                    "VALUES (@AuditID, @BookID, @Action, @DateTime)";
+
+                                using (SqlCommand auditCommand = new SqlCommand(auditQuery, connection))
+                                {
+                                    auditCommand.Parameters.AddWithValue("@AuditID", auditID);
+                                    auditCommand.Parameters.AddWithValue("@BookID", bookID);
+                                    auditCommand.Parameters.AddWithValue("@Action", action);
+                                    auditCommand.Parameters.AddWithValue("@DateTime", dateTime);
+
+                                    auditCommand.ExecuteNonQuery();
+                                }
+                            }
+                        }
+                    }
+
+                    // Delete the record from the Inventory table
+                    string deleteQuery = "DELETE FROM Inventory WHERE BookID = @BookID";
+
+                    using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection))
+                    {
+                        deleteCommand.Parameters.AddWithValue("@BookID", bookIDToDelete);
+                        deleteCommand.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Data deleted successfully.");
+
+                // Refresh the DataGridView
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
     }
