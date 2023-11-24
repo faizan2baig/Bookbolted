@@ -57,6 +57,7 @@
             this.textBox1.Size = new System.Drawing.Size(30, 20);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1
             // 
@@ -65,9 +66,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(60)))));
             this.label1.Location = new System.Drawing.Point(19, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 20);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Code";
+            this.label1.Text = "Password";
             // 
             // textBox2
             // 
@@ -78,6 +79,7 @@
             this.textBox2.Size = new System.Drawing.Size(30, 20);
             this.textBox2.TabIndex = 17;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox3
             // 
@@ -88,6 +90,7 @@
             this.textBox3.Size = new System.Drawing.Size(30, 20);
             this.textBox3.TabIndex = 18;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox4
             // 
@@ -98,6 +101,7 @@
             this.textBox4.Size = new System.Drawing.Size(30, 20);
             this.textBox4.TabIndex = 19;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // button3
             // 
@@ -110,6 +114,7 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Verify";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form2
             // 
@@ -127,6 +132,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

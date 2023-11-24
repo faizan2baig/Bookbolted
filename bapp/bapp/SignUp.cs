@@ -113,6 +113,9 @@ new
                 }
 
                 MessageBox.Show("User signed up successfully.");
+                this.Hide();
+                Form f = new Form1();
+                f.Show();   
             }
             catch (Exception ex)
             {
@@ -164,17 +167,30 @@ new
         {
             string username = textBox1.Text;
 
-            if (IsValidName(username))
+            if (string.IsNullOrEmpty(username))
             {
-                // Valid name
-               // MessageBox.Show("Valid name.");
+                // If the textbox is empty, do nothing or handle it as needed.
             }
+            
             else
             {
                 // Invalid name
                 MessageBox.Show("Invalid name. Names should not contain special characters or numbers.");
-                textBox1.Focus();   
+                textBox1.Focus();
             }
+            // ...
+
+
+
+        }
+        private bool IsValidName(string name)
+        {
+            // Implement your name validation logic here
+            // For example, check if the name contains only letters and no special characters or numbers.
+            // You can use regular expressions for more complex validation.
+
+            // For a simple example:
+            return !name.Any(char.IsDigit) && !name.Any(char.IsPunctuation) && !name.Any(char.IsSymbol);
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
@@ -197,12 +213,7 @@ new
                 MessageBox.Show("Invalid password. Password should have only 4 numbers.");
             }
         }
-        private bool IsValidName(string name)
-        {
-            // Customize this method based on your name validation criteria
-            // For example, allow only alphabets and spaces
-            return !string.IsNullOrWhiteSpace(name) && name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
-        }
+        
 
        
 
@@ -210,6 +221,13 @@ new
         {
             // Check if the password has only 4 numbers
             return password.Length == 4 && password.All(char.IsDigit);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+           Form f = new Form1();
+            f.Show();
         }
     }
 }
