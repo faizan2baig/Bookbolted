@@ -120,6 +120,7 @@ new
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                Form1.LogExceptionToDatabase(ex);
             }
 
         }
@@ -165,33 +166,28 @@ new
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            string username = textBox1.Text;
+            string enteredName = textBox1.Text;
 
-            if (string.IsNullOrEmpty(username))
+            // Check if the name is valid
+            if (IsValidName(enteredName))
             {
-                // If the textbox is empty, do nothing or handle it as needed.
+                // Valid name, do nothing or perform additional actions
             }
-            
             else
             {
-                // Invalid name
-                MessageBox.Show("Invalid name. Names should not contain special characters or numbers.");
+                MessageBox.Show("Invalid name. Please enter a valid name containing only letters and spaces.");
+                // Optionally, clear the TextBox or set focus back to it
+                textBox1.Clear();
                 textBox1.Focus();
             }
-            // ...
-
-
 
         }
         private bool IsValidName(string name)
         {
-            // Implement your name validation logic here
-            // For example, check if the name contains only letters and no special characters or numbers.
-            // You can use regular expressions for more complex validation.
-
-            // For a simple example:
-            return !name.Any(char.IsDigit) && !name.Any(char.IsPunctuation) && !name.Any(char.IsSymbol);
+            // Use a regular expression to check if the name contains only letters and spaces
+            return System.Text.RegularExpressions.Regex.IsMatch(name, @"^[a-zA-Z\s]+$");
         }
+
 
         private void textBox2_Leave(object sender, EventArgs e)
         {

@@ -57,7 +57,7 @@
             this.button3.Location = new System.Drawing.Point(101, 177);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 14;
+            this.button3.TabIndex = 2;
             this.button3.Text = "Send Code";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -84,7 +84,7 @@
             this.textBox2.Location = new System.Drawing.Point(121, 120);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 20);
-            this.textBox2.TabIndex = 11;
+            this.textBox2.TabIndex = 1;
             this.textBox2.TabStop = false;
             this.textBox2.Text = "fbaig8293@gmail.com";
             // 

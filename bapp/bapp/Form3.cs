@@ -71,6 +71,7 @@ namespace bapp
             catch (Exception ex)
             {
                 MessageBox.Show("Error sending email: " + ex.Message);
+                Form1.LogExceptionToDatabase(ex);
             }
 
             //

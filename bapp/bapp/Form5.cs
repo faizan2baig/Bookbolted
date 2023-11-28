@@ -153,6 +153,7 @@ namespace bapp
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                Form1.LogExceptionToDatabase(ex);
             }
 
             // Helper function to check if a string contains space
@@ -272,7 +273,7 @@ namespace bapp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message); Form1.LogExceptionToDatabase(ex);
             }
 
         }
@@ -342,9 +343,17 @@ namespace bapp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message); Form1.LogExceptionToDatabase(ex); Form1.LogExceptionToDatabase(ex);
             }
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ;
+            this.Hide();
+            Form f = new AdminTab();
+            f.Show();
         }
     }
 }

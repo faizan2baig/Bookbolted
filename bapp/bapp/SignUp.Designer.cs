@@ -75,7 +75,7 @@
             this.textBox2.Location = new System.Drawing.Point(98, 160);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 20);
-            this.textBox2.TabIndex = 11;
+            this.textBox2.TabIndex = 2;
             this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
@@ -86,7 +86,7 @@
             this.textBox1.Location = new System.Drawing.Point(98, 117);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 20);
-            this.textBox1.TabIndex = 9;
+            this.textBox1.TabIndex = 1;
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // label2
@@ -118,7 +118,7 @@
             this.textBox3.Location = new System.Drawing.Point(98, 253);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(143, 20);
-            this.textBox3.TabIndex = 17;
+            this.textBox3.TabIndex = 4;
             this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // label4
@@ -145,7 +145,7 @@
             this.comboBox1.Location = new System.Drawing.Point(98, 205);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 28);
-            this.comboBox1.TabIndex = 19;
+            this.comboBox1.TabIndex = 3;
             // 
             // label5
             // 

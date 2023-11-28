@@ -33,8 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +59,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTab.Designer.cs">
+      <DependentUpon>AdminTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuration.cs" />
+    <Compile Include="Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerTab.Designer.cs">
+      <DependentUpon>CustomerTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedbacks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedbacks.Designer.cs">
+      <DependentUpon>Feedbacks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,14 +144,74 @@
     <Compile Include="Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiveFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiveFeedback.Designer.cs">
+      <DependentUpon>GiveFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCustomer.Designer.cs">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchases.Designer.cs">
+      <DependentUpon>Purchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesHistory.Designer.cs">
+      <DependentUpon>SalesHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTab.resx">
+      <DependentUpon>AdminTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerTab.resx">
+      <DependentUpon>CustomerTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedbacks.resx">
+      <DependentUpon>Feedbacks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +230,15 @@
     <EmbeddedResource Include="Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiveFeedback.resx">
+      <DependentUpon>GiveFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCustomer.resx">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -119,11 +249,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Purchases.resx">
+      <DependentUpon>Purchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="App1.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,6 +279,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-bar-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

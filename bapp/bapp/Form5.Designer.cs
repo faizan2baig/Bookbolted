@@ -108,9 +108,10 @@
             this.button5.Location = new System.Drawing.Point(18, 135);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(794, 28);
-            this.button5.TabIndex = 8;
+            this.button5.TabIndex = 12;
             this.button5.Text = "Back";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dataGridView1
             // 
@@ -184,7 +185,7 @@
             this.textBox6.Location = new System.Drawing.Point(671, 87);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
+            this.textBox6.TabIndex = 5;
             // 
             // textBox5
             // 
@@ -194,7 +195,7 @@
             this.textBox5.Location = new System.Drawing.Point(259, 87);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 12;
+            this.textBox5.TabIndex = 4;
             // 
             // textBox4
             // 
@@ -204,7 +205,7 @@
             this.textBox4.Location = new System.Drawing.Point(671, 48);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 11;
+            this.textBox4.TabIndex = 3;
             // 
             // textBox3
             // 
@@ -214,7 +215,7 @@
             this.textBox3.Location = new System.Drawing.Point(259, 48);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 10;
+            this.textBox3.TabIndex = 2;
             // 
             // textBox2
             // 
@@ -224,7 +225,7 @@
             this.textBox2.Location = new System.Drawing.Point(671, 9);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBox2.TabIndex = 1;
             // 
             // label8
             // 
@@ -323,7 +324,7 @@
             this.button4.Location = new System.Drawing.Point(625, 162);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(192, 28);
-            this.button4.TabIndex = 18;
+            this.button4.TabIndex = 11;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -336,7 +337,7 @@
             this.button2.Location = new System.Drawing.Point(7, 162);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 28);
-            this.button2.TabIndex = 16;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -349,7 +350,7 @@
             this.button3.Location = new System.Drawing.Point(419, 162);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(192, 28);
-            this.button3.TabIndex = 15;
+            this.button3.TabIndex = 10;
             this.button3.Text = "View";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -362,7 +363,7 @@
             this.button1.Location = new System.Drawing.Point(213, 162);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 28);
-            this.button1.TabIndex = 17;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Edit ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -375,7 +376,7 @@
             this.textBox7.Location = new System.Drawing.Point(259, 126);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 14;
+            this.textBox7.TabIndex = 6;
             // 
             // label4
             // 
@@ -409,7 +410,7 @@
             this.textBox8.Location = new System.Drawing.Point(671, 126);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 20;
+            this.textBox8.TabIndex = 7;
             // 
             // Form5
             // 
@@ -420,6 +421,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "X";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.panel1.ResumeLayout(false);
